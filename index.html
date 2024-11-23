@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Music Memory</h1>
+  <div class="grid" id="memory-grid">
+  </div>
+
+  <section class="settings" id="settings">
+    <h3 id="time">00:00.000</h3>
+    <div class="tones" id="tones">
+      <span class="tone" data-note="A">A</span>
+      <span class="tone" data-note="A#/Bb">A#</span>
+      <span class="tone" data-note="B">B</span>
+      <span class="tone" data-note="C">C</span>
+      <span class="tone" data-note="C#/Db">C#</span>
+      <span class="tone" data-note="D">D</span>
+      <span class="tone" data-note="D#/Eb">D#</span>
+      <span class="tone" data-note="E">E</span>
+      <span class="tone" data-note="F">F</span>
+      <span class="tone" data-note="F#/Gb">F#</span>
+      <span class="tone" data-note="G">G</span>
+      <span class="tone" data-note="G#/Ab">G#</span>
+    </div>
+    <button class="reset" id="reset">Reset</button>
+  </section>
+
+  <template id="card-template">
+    <div class="card">
+      <span>$NOTE</span>
+    </div>
+  </template>
+
+  <script src="/main.js"></script>
+  <script>
+    const mg = new MemoryGame({
+      gridEl: document.getElementById('memory-grid'),
+      cardTemplateEl: document.getElementById('card-template'),
+      tonesEl: document.getElementById('tones'),
+      timeEl: document.getElementById('time'),
+      resetEl: document.getElementById('reset'),
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+:root {
+  --bg-color: rgb(13, 3, 29);
+  --main-color: rgb(255, 252, 225);
+  --card-select-color: rgb(121, 159, 223);
+  --card-invalid-color: rgb(199, 33, 33);
+  --card-valid-color: rgb(72, 210, 72);
+  --card-text-color: rgb(27, 27, 27);
+  --card-size: 5rem;
+  --card-gap: 0.2rem;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--main-color);
+  font-family: sans-serif;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  text-transform: lowercase;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: repeat(3, var(--card-size));
+  grid-template-columns: repeat(3, var(--card-size));
+  gap: var(--card-gap);
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--card-size);
+  height: var(--card-size);
+  background-color: var(--main-color);
+  color: var(--card-text-color);
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+}
+
+.card span {
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: none;
+  text-align: center;
+}
+.card.valid span {
+  display: flex;
+}
+
+.card.open {
+  background-color: var(--card-select-color);
+  cursor: default;
+}
+.card.open.invalid {
+  background-color: var(--card-invalid-color);
+}
+.card.open.valid {
+  background-color: var(--card-valid-color);
+}
+
+.settings {
+  display: block;
+  padding-top: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.settings h3 {
+  width: 100%;
+  font-size: 1rem;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.settings .tones {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.settings .tones .tone {
+  padding: 0 0.3rem;
+  cursor: pointer;
+}
+
+.settings .tones .tone.disabled {
+  opacity: 0.5;
+}
+
+.settings .tones .tone.playing {
+  cursor: default;
+}
+
+.settings .tones .tone.valid {
+  color: var(--card-valid-color);
+}
+
+.settings .reset {
+  color: inherit;
+  background: none;
+  border: none;
+  font-size: inherit;
+  font-weight: inherit;
+  font-size: 1.2rem;
+  text-transform: lowercase;
+  cursor: pointer;
+  display: inline-block;
+  visibility: hidden;
+}
+
+.settings .reset.playing {
+  visibility: visible;
+}
