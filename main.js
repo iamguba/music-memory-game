@@ -189,10 +189,6 @@ class MemoryGame {
   }
 
   handleResetClick() {
-    if (!this.isPlaying) {
-      return;
-    }
-
     this.resetEl.classList.remove("playing");
     this.getTonesEls().forEach((t) => t.classList.remove("playing"));
 
