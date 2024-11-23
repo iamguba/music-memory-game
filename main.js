@@ -232,8 +232,6 @@ class MemoryGame {
       indexes.add(index);
     }
 
-    console.log(tones);
-
     return tones;
   }
 
@@ -261,10 +259,7 @@ class MemoryGame {
       indexes.add(second);
     }
 
-    console.log(this.cardValues);
-
     this.toneValues = this.cardValues.map((value) => this.tones[value]);
-    console.log(this.toneValues);
   }
 
   playSound(index) {
