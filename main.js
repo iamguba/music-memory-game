@@ -190,9 +190,13 @@ class MemoryGame {
 
   handleResetClick() {
     this.resetEl.classList.remove("playing");
-    this.getTonesEls().forEach((t) => t.classList.remove("playing"));
+    this.getTonesEls().forEach((t) => {
+      t.classList.remove("playing");
+      t.classList.remove("valid");
+    });
 
     this.stopInterval();
+    this.resetEl.innerText = "00:00.000";
     this.setup();
   }
 
