@@ -196,7 +196,7 @@ class MemoryGame {
     });
 
     this.stopInterval();
-    this.resetEl.innerText = "00:00.000";
+    this.timeEl.innerText = "00:00.000";
     this.setup();
   }
 
